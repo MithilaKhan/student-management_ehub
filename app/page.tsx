@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-   <div> hello world </div>
+   <div className=" text-6xl"> hello world </div>
   );
 }
