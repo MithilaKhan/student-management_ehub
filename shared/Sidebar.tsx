@@ -1,143 +1,93 @@
 'use client';
-
-import { Menu } from 'antd';
-import React, { useEffect, useMemo, useState } from 'react';
-import { MdOutlineFavoriteBorder } from 'react-icons/md';
-import { AiOutlineDashboard } from 'react-icons/ai';
+import { ConfigProvider, Menu } from 'antd';
+import type { MenuProps } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { IoIosLogOut } from 'react-icons/io';
-import { IoSettingsOutline } from 'react-icons/io5';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { LuMessagesSquare } from 'react-icons/lu';
-import { FiBook } from 'react-icons/fi';
-import { RxCalendar } from 'react-icons/rx';
-import { BsCardChecklist } from 'react-icons/bs';
-import { LiaMoneyBillSolid } from 'react-icons/lia';
-import { FaCampground } from 'react-icons/fa';
+import { menuItems } from '@/constants/sidebarData';
 
 const Sidebar = () => {
-  const path = usePathname();
-  const [selectedKey, setSelectedKey] = useState<string>('');
-  const [openKeys, setOpenKeys] = useState<string[]>([]);
-
-
-  const menuItems = useMemo(
-    () => [
-      {
-        key: '/brand-home',
-        icon: <AiOutlineDashboard size={24} />,
-        label: <Link href="/brand-home">Analytics</Link>,
-      },
-      {
-        key: '/favorites',
-        icon: <MdOutlineFavoriteBorder size={24} />,
-        label: <Link href="/favorites">Favorites</Link>,
-      },
-      {
-        key: '/inbox',
-        icon: <LuMessagesSquare size={24} />,
-        label: <Link href="/inbox">Inbox</Link>,
-      },
-      {
-        key: '/applicants',
-        icon: <FiBook size={24} />,
-        label: <Link href="/applicants">Applicants</Link>,
-      },
-      {
-        key: '/approve-submissions',
-        icon: <FiBook size={24} />,
-        label: <Link href="/approve-submissions">Approve Submissions</Link>,
-      },
-      {
-        key: '/calender',
-        icon: <RxCalendar size={24} />,
-        label: <Link href="/calender">Calender</Link>,
-      },
-      {
-        key: '/todo',
-        icon: <BsCardChecklist size={24} />,
-        label: <Link href="/todo">To-Do</Link>,
-      },
-      {
-        key: '/wallet',
-        icon: <LiaMoneyBillSolid size={24} />,
-        label: <Link href="/wallet">Budget</Link>,
-      },
-      {
-        key: '/add-campaign',
-        icon: <FaCampground size={24} />,
-        label: <Link href="/add-campaign">Add Campaign</Link>,
-      },
-      {
-        key: 'subMenuSetting',
-        icon: <IoSettingsOutline size={24} />,
-        label: 'Settings',
-        children: [
-          {
-            key: '/profile',
-            label: <Link href="/profile">Profile</Link>,
-          }, 
-          // {
-          //   key: '/support',
-          //   label: <Link href="/support">Support</Link>,
-          // }, 
-          {
-            key: '/business-info',
-            label: <Link href="/business-info">Business Information</Link>,
-          },
-  
-        ],
-      },
-      {
-        key: '/login',
-        icon: <IoIosLogOut size={24} />,
-        label: <Link href="/login">Log Out</Link>,
-      },
-    ],[]
-   
-  );
-
+  const path = usePathname() || '/';
+  const [selectedKey, setSelectedKey] = useState<string>(path);
+  const [openKeys, setOpenKeys] = useState<string[]>([]); 
+  const items = menuItems ?? [];
+ 
   useEffect(() => {
-    const selectedItem = menuItems.find(
-      (item) =>
-        item.key === path || item.children?.some((sub: { key: string }) => sub.key === path)
+    setSelectedKey(path);
+    const parent = items.find(
+      (it) =>
+        Array.isArray((it as any).children) &&
+        (it as any).children.some((c: any) => c.key === path)
     );
-
-    if (selectedItem) {
-      setSelectedKey(path);
-
-      if (selectedItem.children) {
-        setOpenKeys([selectedItem.key]);
+    if (parent) {
+      setOpenKeys([parent.key as string]);
+    } else {
+      const selfParent = items.find(
+        (it: any) => it.key === path && Array.isArray((it as any).children)
+      );
+      if (selfParent) {
+        setOpenKeys([selfParent.key as string]);
       } else {
-        const parentItem = menuItems.find((item) =>
-          item.children?.some((sub: {key: string}) => sub.key === path)
-        );
-        if (parentItem) {
-          setOpenKeys([parentItem.key]);
-        }
+        setOpenKeys([]);
       }
     }
-  }, [path, menuItems]);
+  }, [path, items]);
 
-  const handleOpenChange = (keys: string[]) => {
-    setOpenKeys(keys);
+  const handleOpenChange: MenuProps['onOpenChange'] = (keys) => {
+    setOpenKeys(keys as string[]);
+  };
+
+  const handleClick: MenuProps['onClick'] = ({ key }) => {
+    setSelectedKey(key as string);
   };
 
   return (
-    <div className="mt-8 px-5">
-      <Link href="/" className=" py-6">
-        <p className="text-[32px] font-semibold  tracking-tight text-black">
-        Creator Briefs
-        </p>
-      </Link>
-      <Menu
-        mode="inline"
-        selectedKeys={[selectedKey]}
-        openKeys={openKeys}
-        onOpenChange={handleOpenChange}
-        style={{ borderRightColor: 'transparent', background: 'transparent' }}
-        items={menuItems}
-      />
+    <div className="relative h-full pt-8 ps-3 w-full">
+      <div className="flex flex-col h-[100%]">
+        <Link href="/" className="pb-3 flex-center ">
+          <p className="text-[32px] font-semibold tracking-tight text-[#ABABAB]">e.hub</p>
+        </Link>
+
+        {/* scrollable menu area */}
+        <div className="flex-1 overflow-y-auto w-full pr-2 pb-20">
+          <ConfigProvider
+            theme={{
+              components: {
+                Menu: {
+                  itemSelectedBg: '#101010',
+                  itemHoverBg: '#101010',
+                  itemActiveBg: '#101010',
+                  itemSelectedColor: '#F1F1F1',
+                  itemBorderRadius: 50,
+                  itemHeight: 47,
+                },
+              },
+              token: {
+                colorText: '#ABABAB',
+              },
+            }}
+          >
+            <Menu
+              mode="inline"
+              selectedKeys={[selectedKey]}
+              openKeys={openKeys}
+              onOpenChange={handleOpenChange}
+              onClick={handleClick}
+              style={{ borderRightColor: 'transparent', background: 'transparent' }}
+              items={menuItems}
+            />
+          </ConfigProvider>
+        </div>
+
+        {/* pinned logout at bottom */}
+        <div className="py-3 ps-3 absolute bottom-0 w-full bg-[#1C1C1E] ">
+          <Link href="/login" className="flex items-center gap-x-2 text-red-500 hover:text-red-600">
+            <IoIosLogOut size={18} />
+            <span className="font-normal">Logout</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
