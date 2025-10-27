@@ -17,8 +17,8 @@ const layout = ({children}: {children: React.ReactNode}) => {
                         <Header/>
                     </div>
     
-                    <div className=' pt-4 h-[calc(100vh-95px)]  '  >
-                        <div className='h-full overflow-y-auto rounded-md  '>
+                    <div className=' pt-4 h-[calc(100vh-95px)]   '  >
+                        <div className='h-full overflow-y-auto rounded-md bg-[#1C1C1E] p-5 '>
                         {children}
                         </div>
                     </div>
