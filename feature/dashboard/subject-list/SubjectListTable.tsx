@@ -1,8 +1,9 @@
-"use client";
+
 import React from 'react';
 import { ConfigProvider, Table } from 'antd';
 import subjectListData from '@/constants/dashboard/subject-list-data';
-const SubjectListTable = () => {
+import { modalType } from '@/type';
+const SubjectListTable = ({ setIsOpen}:modalType) => { 
 
     const columns = [
         {
@@ -40,8 +41,8 @@ const SubjectListTable = () => {
             key: 'action',
             // _: any, record: SubjectListType
             render: () => (
-                <div className="flex gap-2">
-                    <button className="text-sm text-[#FF4D4D]">Edit</button>
+                <div className="flex gap-2" onClick={()=>{setIsOpen(true)}}>
+                    <button className="text-sm text-[#FF4D4D] cursor-pointer">Edit</button>
                 </div>
             ),
         },
@@ -59,8 +60,8 @@ const SubjectListTable = () => {
                         },
                     },
                     token: {
-                        colorPrimary: '#ffffff',
-                        colorText: '#ffffff',
+                        colorPrimary: '#abab9e',
+                        colorText: '#abab9e',
                         borderRadius: 8,
                         colorBgContainer: "transparent",  
                       
@@ -70,7 +71,7 @@ const SubjectListTable = () => {
                 <Table
                     columns={columns}
                     dataSource={subjectListData}
-                    pagination={{ pageSize: 9, total: subjectListData.length }}
+                    pagination={{ pageSize: 10, total: subjectListData.length }}
                     className="custom-table"
                 />
             </ConfigProvider>
