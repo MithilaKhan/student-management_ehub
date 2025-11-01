@@ -30,7 +30,7 @@ const SubjectListModal = ({ isOpen, setIsOpen }: modalType) => {
                     <TextArea rows={4} placeholder="Please enter Subject Details"  />
                 </Form.Item>
 
-                <Form.Item className="mt-6 flex justify-center">
+                <Form.Item className="mt-6 flex justify-end">
                     <button type="submit" className=" bg-[#1A5FA4] h-[45px]  px-8 rounded-md text-white">
                         Save Changes
                     </button>

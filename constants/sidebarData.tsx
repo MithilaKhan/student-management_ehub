@@ -65,7 +65,7 @@ const  menuItems: MenuProps['items'] = [
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/student-list/assigned">Assigned Student List</Link>
+                            <Link href="/student-list/assigned-student-list">Assigned Student List</Link>
                         </span>
                     ),
                 },
@@ -83,7 +83,7 @@ const  menuItems: MenuProps['items'] = [
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/student-list/form">Student Form</Link>
+                            <Link href="/student-list/student-form">Student Form</Link>
                         </span>
                     ),
                 },
@@ -92,7 +92,7 @@ const  menuItems: MenuProps['items'] = [
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/student-list/deleted">Deleted Student List</Link>
+                            <Link href="/student-list/deleted-student-list">Deleted Student List</Link>
                         </span>
                     ),
                 },

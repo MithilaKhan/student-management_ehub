@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { ConfigProvider, Table } from 'antd';
 import subjectListData from '@/constants/dashboard/subject-list-data';
 import { modalType } from '@/type';
+import TableMain from '@/shared/TableMain';
 const SubjectListTable = ({ setIsOpen}:modalType) => { 
 
     const columns = [
@@ -49,32 +49,12 @@ const SubjectListTable = ({ setIsOpen}:modalType) => {
     ];
 
     return (
-        <div>
-
-            <ConfigProvider
-                theme={{
-                    components: {
-                        Table: {
-                            headerBg: '#3e3e3f', 
-                              rowHoverBg: '#2a2a2b',
-                        },
-                    },
-                    token: {
-                        colorPrimary: '#abab9e',
-                        colorText: '#abab9e',
-                        borderRadius: 8,
-                        colorBgContainer: "transparent",  
-                      
-                    },
-                }}
-            >
-                <Table
-                    columns={columns}
-                    dataSource={subjectListData}
-                    pagination={{ pageSize: 10, total: subjectListData.length }}
-                    className="custom-table"
-                />
-            </ConfigProvider>
+        <div>      
+                <TableMain
+                columns={columns}
+                dataSource={subjectListData}
+                className="w-full custom-table"
+            />
         </div>
     );
 };

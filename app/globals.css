@@ -27,7 +27,7 @@ html, body {
   background: transparent !important;
   border: 1px solid #ffffff1a !important;
 /* height: 48px !important; */
-} 
+}  
 
 .ant-input::placeholder {
   color: #6B7280 !important;
