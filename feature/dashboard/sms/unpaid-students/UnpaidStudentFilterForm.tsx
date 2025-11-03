@@ -1,10 +1,12 @@
 "use client";
 import React from 'react';
-import { Form, Input, Select } from 'antd';
+import { DatePicker, Form, Input, Select } from 'antd';
 import { studentOptions } from '@/constants/dashboard/class-routine-data';
 import { MdArrowDropDown } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
 
-const AllStudentForm = () => {
+const UnpaidStudentFilterForm = () => { 
+    const router = useRouter();
     return (
         <Form layout="vertical" className=' w-[50%]' >
             <Form.Item
@@ -62,27 +64,37 @@ const AllStudentForm = () => {
                     style={{ width: '100%', height: 45 }}
                     suffixIcon={<p> <MdArrowDropDown color='white' size={22} /> </p>}
                 />
-            </Form.Item> 
+            </Form.Item>
 
-            <p  className="block pb-3  text-[#cdd1d8]"> Enrolment Date Range </p>
+            {/* month & year pickers from antd */}
             <div className="grid grid-cols-2 gap-4">
                 <Form.Item
-                    label={<label className="block text-sm  text-[#9CA3AF]"> Start Date</label>}
-                    name="regStartDate"
+                    label={<label className="block text-sm  text-[#9CA3AF]">Month</label>}
+                    name="month"
                 >
-                    <Input type="date" style={{ height: 45 }} />
+                    <DatePicker
+                        picker="month"
+                        placeholder="Select a Month"
+                        format="MMMM"
+                        style={{ width: '100%', height: 45 }}
+                    />
                 </Form.Item>
 
                 <Form.Item
-                    label={<label className="block text-sm  text-[#9CA3AF]"> End Date</label>}
-                    name="regEndDate"
+                    label={<label className="block text-sm  text-[#9CA3AF]">Year</label>}
+                    name="year"
                 >
-                    <Input type="date" style={{ height: 45 }} />
+                    <DatePicker
+                        picker="year"
+                        placeholder="Select Year"
+                        format="YYYY"
+                        style={{ width: '100%', height: 45 }}
+                    />
                 </Form.Item>
             </div>
 
             <Form.Item className="mt-6 flex justify-end">
-                <button type="submit" className=" bg-[#1A5FA4] h-[45px]  px-8 rounded-md text-white">
+                <button type="submit" className=" bg-[#1A5FA4] h-[45px]  px-8 rounded-md text-white" onClick={()=>router.push("/sms/unpaid-students/filtered-student-list")}>
                     Get Filtered Student List
                 </button>
             </Form.Item>
@@ -90,4 +102,4 @@ const AllStudentForm = () => {
     );
 };
 
-export default AllStudentForm;
+export default UnpaidStudentFilterForm;
