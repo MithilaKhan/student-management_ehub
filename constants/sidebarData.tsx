@@ -163,11 +163,11 @@ const  menuItems: MenuProps['items'] = [
             label: 'Attendance',
             children: [
                 {
-                    key: '/attendance/take',
+                    key: '/attendance/take-attendance',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/attendance/take">Take Attendance</Link>
+                            <Link href="/attendance/take-attendance">Take Attendance</Link>
                         </span>
                     ),
                 },
@@ -190,11 +190,11 @@ const  menuItems: MenuProps['items'] = [
                     ),
                 },
                 {
-                    key: '/attendance/excel-output',
+                    key: '/attendance/excel-output-report',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/attendance/excel-output">Excel Output report</Link>
+                            <Link href="/attendance/excel-output-report">Excel Output report</Link>
                         </span>
                     ),
                 },
