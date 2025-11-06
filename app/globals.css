@@ -35,4 +35,9 @@ html, body {
 
 .ant-modal .ant-modal-close {
   color: #ffffff !important;
+} 
+
+.jodit_theme_dark .jodit-wysiwyg {
+  background-color: #1c1c1e !important;
+  color: #ffffff !important;
 }
