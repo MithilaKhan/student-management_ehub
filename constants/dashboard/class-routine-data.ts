@@ -12,11 +12,11 @@ const overviewData = [
 ]; 
 
  const studentOptions = [
-    { value: '1', label: 'John Doe' },
-    { value: '2', label: 'Jane Smith' },
-    { value: '3', label: 'Ali Khan' },
-    { value: '4', label: 'Maria Garcia' },
-    { value: '5', label: 'Student Example' },
+    { value: 'John Doe', label: 'John Doe' },
+    { value: 'Jane Smith', label: 'Jane Smith' },
+    { value: 'Ali Khan', label: 'Ali Khan' },
+    { value: 'Maria Garcia', label: 'Maria Garcia' },
+    { value: 'Student Example', label: 'Student Example' },
   ];
 
 export { studentOptions, overviewData };

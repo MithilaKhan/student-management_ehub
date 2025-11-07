@@ -26,7 +26,7 @@ const NoticeTable = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) =>
             dataIndex: "details",
             key: "details",
             render: (text: string) => (
-                <div className="text-sm text-gray-300 whitespace-pre-line">{text}</div>
+                <div className="text-sm text-[#ABABAB] whitespace-pre-line">{text}</div>
             ),
         },
         {
@@ -35,7 +35,7 @@ const NoticeTable = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) =>
             dataIndex: "startDate",
             width: 250,
             render: (_: any, record: any) => (
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-[#ABABAB]">
                     <div>{formatDateTime(record.startDate)}</div>
                     <div className="mt-1">{formatDateTime(record.endDate)}</div>
                 </div>
@@ -53,7 +53,7 @@ const NoticeTable = ({ setIsOpen }: { setIsOpen: (isOpen: boolean) => void }) =>
             key: "isActive",
             width: 100,
             render: (val: boolean) =>
-                val ? <span className="text-green-400">Active</span> : <span className="text-gray-400">Inactive</span>,
+                val ? <span className="text-green-400">Active</span> : <span className="text-[#ABABAB]">Inactive</span>,
         },
         {
             title: "Action",

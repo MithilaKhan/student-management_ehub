@@ -11,7 +11,7 @@ const NoticeList = () => {
     return (
         <div>
             <div className="flex items-center justify-between mb-6">
-                <HeaderTitle title="Batch List" />
+                <HeaderTitle title="Notice List" />
                 <div className='flex items-center gap-x-3'>
                     <Input placeholder="Search" className="" style={{ width: 280, height: 40 }} prefix={<FiSearch size={20} />} />
                     <button type="submit" className=" bg-[#1A5FA4] h-[40px]  px-6 rounded-md text-white" onClick={() => setIsOpen(true)}>

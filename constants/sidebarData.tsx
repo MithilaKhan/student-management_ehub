@@ -216,56 +216,56 @@ const  menuItems: MenuProps['items'] = [
             label: 'Exam Module',
             children: [
                 {
-                    key: '/exam/list',
+                    key: '/exam-module/exam-list',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/exam/list">Exam list</Link>
+                            <Link href="/exam-module/exam-list">Exam list</Link>
                         </span>
                     ),
                 },
                 {
-                    key: '/exam/admit-card',
+                    key: '/exam-module/admit-card',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/exam/admit-card">Admit Card</Link>
+                            <Link href="/exam-module/admit-card">Admit Card</Link>
                         </span>
                     ),
                 },
                 {
-                    key: '/exam/marks-entry',
+                    key: '/exam-module/marks-entry',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/exam/marks-entry">Marks Entry</Link>
+                            <Link href="/exam-module/marks-entry">Marks Entry</Link>
                         </span>
                     ),
                 },
                 {
-                    key: '/exam/sms-exam-mark',
+                    key: '/exam-module/sms-exam-mark',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/exam/sms-exam-mark">SMS Exam Mark</Link>
+                            <Link href="/exam-module/sms-exam-mark">SMS Exam Mark</Link>
                         </span>
                     ),
                 },
                 {
-                    key: '/exam/marksheet',
+                    key: '/exam-module/marksheet',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/exam/marksheet">Marksheet</Link>
+                            <Link href="/exam-module/marksheet">Marksheet</Link>
                         </span>
                     ),
                 },
                 {
-                    key: '/exam/excel-output-marksheets',
+                    key: '/exam-module/excel-output-marksheets',
                     label: (
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
-                            <Link href="/exam/excel-output-marksheets">Excel Output Marksheets</Link>
+                            <Link href="/exam-module/excel-output-marksheets">Excel Output Marksheets</Link>
                         </span>
                     ),
                 },
