@@ -12,6 +12,7 @@ import { IoNotificationsOutline } from 'react-icons/io5';
 import { GiGraduateCap } from 'react-icons/gi';
 import Link from 'next/link';
 import type { MenuProps } from 'antd';
+import { TiUserOutline } from 'react-icons/ti';
 
 
 const  menuItems: MenuProps['items'] = [
@@ -266,6 +267,31 @@ const  menuItems: MenuProps['items'] = [
                         <span className="flex items-center text-[12px]">
                             <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
                             <Link href="/exam-module/excel-output-marksheets">Excel Output Marksheets</Link>
+                        </span>
+                    ),
+                },
+            ],
+        }, 
+          {
+            key: 'super-admin',
+            icon: <TiUserOutline size={18} />,
+            label: 'Super Admin',
+            children: [
+                {
+                    key: '/super-admin/add-admin',
+                    label: (
+                        <span className="flex items-center text-[12px]">
+                            <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
+                            <Link href="/super-admin/add-admin">Add Admin</Link>
+                        </span>
+                    ),
+                },
+                {
+                    key: '/super-admin/add-teacher',
+                    label: (
+                        <span className="flex items-center text-[12px]">
+                            <AiOutlineRight className="mr-2 text-[12px] opacity-70" />
+                            <Link href="/super-admin/add-teacher">Add Teacher</Link>
                         </span>
                     ),
                 },

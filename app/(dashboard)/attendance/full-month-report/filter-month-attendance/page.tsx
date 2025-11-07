@@ -3,8 +3,10 @@ import React from 'react';
 
 const FilterMonthAttendancePage = () => {
     return (
-        <div>
+        <div> 
+            <React.Suspense> 
             <FilterMonthAttendance />
+            </React.Suspense>
         </div>
     );
 };

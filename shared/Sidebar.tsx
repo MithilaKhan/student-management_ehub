@@ -50,7 +50,7 @@ const Sidebar = () => {
         </Link>
 
         {/* scrollable menu area */}
-        <div className="flex-1 overflow-y-auto w-full pr-2 pb-20">
+        <div className="flex-1 overflow-y-auto w-full pr-2 pb-16">
           <ConfigProvider
             theme={{
               components: {

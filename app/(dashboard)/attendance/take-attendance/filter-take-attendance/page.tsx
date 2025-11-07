@@ -3,8 +3,10 @@ import React from 'react';
 
 const FilterTakeAttendancePage = () => {
     return (
-        <div>
+        <div> 
+            <React.Suspense> 
             <FilterTakeAttendance />
+            </React.Suspense>
         </div>
     );
 };
