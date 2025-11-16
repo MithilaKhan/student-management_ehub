@@ -2,8 +2,12 @@
 
 html, body {
   scrollbar-width: none;
-  -ms-overflow-style: none;
+  -ms-overflow-style: none; 
 }
+
+:root {
+  --primary: #1A5FA4;
+} 
 
 ::-webkit-scrollbar {
   display: none;
