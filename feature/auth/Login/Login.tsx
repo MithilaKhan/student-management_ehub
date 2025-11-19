@@ -1,15 +1,16 @@
 "use client"
 import InputField from "@/shared/InputField";
 import { Checkbox, Form, Input } from "antd";
+import { useRouter } from "next/navigation";
 import React from "react";
 const Login = () => {
-
+const router = useRouter();
   return (
     <div
     >
       <div className=" mb-6">
         <h1 className="text-[25px] font-semibold mb-2">Log in to your account</h1>
-        <p className="text-[#11D279]"> Please enter your email and password to continue</p>
+        <p className="text-[#11D279] md:text-[16px] text-sm"> Please enter your email and password to continue</p>
       </div>
       <Form
         layout="vertical"
@@ -19,7 +20,7 @@ const Login = () => {
 
         <Form.Item
           name="password"
-          label={<p>Password</p>}
+          label={<p className="font-normal text-[#f5f4f4]">Password</p>}
           rules={[
             {
               required: true,
@@ -40,8 +41,8 @@ const Login = () => {
         </Form.Item>
 
         <div className="flex items-center justify-between">
-          <Form.Item style={{ marginBottom: 0 }} name="remember" valuePropName="checked" >
-            <Checkbox defaultChecked>Remember me</Checkbox>
+          <Form.Item style={{ marginBottom: 0 }} className="font-normal text-[#f5f4f4]" name="remember" valuePropName="checked" >
+            <Checkbox defaultChecked className="font-normal text-[#f5f4f4]">Remember me</Checkbox>
           </Form.Item>
 
           <a
@@ -63,7 +64,8 @@ const Login = () => {
               fontSize: "18px",
 
               marginTop: 20
-            }}
+            }} 
+            onClick={() => router.push("/")}
             className="flex items-center justify-center bg-[#1A5FA4] rounded-lg"
           >
             Sign in

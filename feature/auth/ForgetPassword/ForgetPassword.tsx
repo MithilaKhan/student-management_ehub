@@ -1,8 +1,11 @@
 "use client"
-import { Form, Input } from "antd";
+import InputField from "@/shared/InputField";
+import { Form } from "antd";
+import { useRouter } from "next/navigation";
 import React from "react";
 
-const ForgetPassword = () => {
+const ForgetPassword = () => { 
+  const router = useRouter();
 
   return (
     <div>
@@ -11,27 +14,7 @@ const ForgetPassword = () => {
       </div>
 
       <Form layout="vertical" >
-        <Form.Item
-          label={<p>Email</p>}
-          name="email"
-          id="email"
-          rules={[
-            {
-              required: true,
-              message: "Please input your email!",
-            },
-          ]}
-        >
-          <Input
-            placeholder="Enter your email address"
-            style={{
-              height: 40,
-              border: "1px solid #d9d9d9",
-              outline: "none",
-              boxShadow: "none"
-            }}
-          />
-        </Form.Item>
+        <InputField name={"email"} label={"Email"} />
 
         <Form.Item>
           <button
@@ -43,7 +26,8 @@ const ForgetPassword = () => {
               fontWeight: "400px",
               fontSize: "18px",
               marginTop: 20
-            }}
+            }} 
+            onClick={() => router.push("/verify-otp")}
             className="flex items-center justify-center bg-[#1A5FA4] rounded-lg"
           >
             Send OTP

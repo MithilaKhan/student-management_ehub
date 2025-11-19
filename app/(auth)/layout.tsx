@@ -10,11 +10,11 @@ const poppins = Poppins({
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div
-            className="w-full flex items-center justify-center relative text-[#bdbbbb] bg-black"
+            className="w-full flex items-center justify-center relative text-[#f5f4f4] bg-[#0A0B0D]"
             style={{ height: "100vh" }}
         >
             <div
-                className={`${poppins.className} shadow-xl bg-[#4d4d51]/60 bg-clip-padding backdrop-filter backdrop-blur-lg border border-gray-100/50 p-7 rounded-md w-[570px] relative z-10`}
+                className={`${poppins.className} shadow-xl bg-[#4d4d51] bg-clip-padding backdrop-filter backdrop-blur-lg border border-gray-100/50 p-7 rounded-md w-[570px] relative z-10 text-[#f5f4f4]`}
             >
                 <ConfigProvider
                     theme={{

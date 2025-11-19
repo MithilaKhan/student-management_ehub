@@ -8,7 +8,7 @@ const InputField: React.FC<{ name: string; label: string }> = ({ name, label }) 
     <Form.Item
       name={name} 
       
-      label={<p className="text-[#4E4E4E] text-[16px]">{label}</p>}
+      label={<p className="font-normal text-[#f5f4f4] text-[16px]">{label}</p>}
       rules={[
         {
           required: true,
@@ -21,9 +21,7 @@ const InputField: React.FC<{ name: string; label: string }> = ({ name, label }) 
         style={{
             height: 48,
             border: "1px solid #d9d9d9",
-            outline: "none",
             boxShadow: "none",
-            backgroundColor: "white",
           }}
       /> 
     </Form.Item>

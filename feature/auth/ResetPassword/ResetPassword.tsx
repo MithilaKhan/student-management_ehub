@@ -1,9 +1,10 @@
 "use client"
 import { Button, Form, Input } from "antd";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const ResetPassword = () => {
-
+const router = useRouter();
   return (
     <div>
       <div className=" mb-6">
@@ -16,14 +17,7 @@ const ResetPassword = () => {
 
         <Form.Item
           name="newPassword"
-          label={<p
-            style={{
-              display: "block",
-              color: "#5C5C5C",
-            }}
-
-            className="font-semibold "
-          >
+          label={<p className="font-normal text-[#f5f4f4]" >
             New Password
           </p>}
           rules={[
@@ -50,13 +44,7 @@ const ResetPassword = () => {
 
         <Form.Item
           style={{ marginBottom: 0 }}
-          label={<p
-            style={{
-              display: "block",
-              color: "#5C5C5C",
-            }}
-            className="font-semibold"
-          >
+          label={<p className="font-normal text-[#f5f4f4]">
             Confirm Password
           </p>}
           name="confirmPassword"
@@ -96,7 +84,8 @@ const ResetPassword = () => {
 
         <Form.Item style={{ marginBottom: 0 }}>
           <Button
-            htmlType="submit"
+            htmlType="submit" 
+            onClick={()=>router.push("/")}
             style={{
               width: '100%',
               height: 45,
@@ -104,7 +93,8 @@ const ResetPassword = () => {
               fontWeight: "400px",
               fontSize: "18px",
               background: "#1A5FA4",
-              marginTop: 20
+              marginTop: 20 ,
+               outline: "none",
             }}
           >
             Update

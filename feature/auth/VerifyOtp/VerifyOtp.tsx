@@ -1,9 +1,11 @@
 "use client"
 import { Button, ConfigProvider, Form, Input, Typography } from "antd";
+import { useRouter } from "next/navigation";
 import React from "react"
 const { Text } = Typography;
 
-const VerifyOtp = () => {
+const VerifyOtp = () => {  
+  const router = useRouter();
   return (
     <div>
       <div className=" mb-6">
@@ -44,9 +46,9 @@ const VerifyOtp = () => {
         </ConfigProvider>
 
 
-        <div className="flex items-center justify-between mb-6 ">
+        <div className="flex items-center justify-between mb-6 font-normal text-[#f5f4f4]">
           <Text>Don&apos;t received code?</Text>
-          <p
+          <p 
             className="login-form-forgot underline font-medium"
             style={{ color: "#00B047", cursor: "pointer" }}
           >
@@ -65,7 +67,8 @@ const VerifyOtp = () => {
               boxShadow: "none",
               background: "#1A5FA4",
               color: "white"
-            }}
+            }} 
+            onClick={() => router.push("/reset-password")}
           >
             Verify
           </Button>
