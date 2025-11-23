@@ -7,12 +7,16 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { menuItems } from '@/constants/sidebarData';
 
-const Sidebar = () => {
+interface SidebarProps {
+  onCloseDrawer?: () => void;
+}
+
+const Sidebar = ({ onCloseDrawer }: SidebarProps) => {
   const path = usePathname() || '/';
   const [selectedKey, setSelectedKey] = useState<string>(path);
-  const [openKeys, setOpenKeys] = useState<string[]>([]); 
+  const [openKeys, setOpenKeys] = useState<string[]>([]);
   const items = menuItems ?? [];
- 
+
   useEffect(() => {
     setSelectedKey(path);
     const parent = items.find(
@@ -34,22 +38,23 @@ const Sidebar = () => {
     }
   }, [path, items]);
 
-  const handleOpenChange: MenuProps['onOpenChange'] = (keys) => {
+  const handleOpenChange: MenuProps["onOpenChange"] = (keys) => {
     setOpenKeys(keys as string[]);
   };
 
-  const handleClick: MenuProps['onClick'] = ({ key }) => {
-    setSelectedKey(key as string);
+  const handleClick: MenuProps["onClick"] = ({ key }) => {
+    setSelectedKey(key);
+    onCloseDrawer?.();  
   };
 
   return (
     <div className="relative h-full pt-8 ps-3 w-full">
-      <div className="flex flex-col h-[100%]">
-        <Link href="/" className="pb-3 flex-center ">
+      <div className="flex flex-col h-full">
+
+        <Link href="/" className="pb-3 flex-center" onClick={onCloseDrawer}>
           <p className="text-[32px] font-semibold tracking-tight text-[#ABABAB]">e.hub</p>
         </Link>
 
-        {/* scrollable menu area */}
         <div className="flex-1 overflow-y-auto w-full pr-2 pb-16">
           <ConfigProvider
             theme={{
@@ -63,9 +68,7 @@ const Sidebar = () => {
                   itemHeight: 47,
                 },
               },
-              token: {
-                colorText: '#ABABAB',
-              },
+              token: { colorText: '#ABABAB' }
             }}
           >
             <Menu
@@ -75,18 +78,22 @@ const Sidebar = () => {
               onOpenChange={handleOpenChange}
               onClick={handleClick}
               style={{ borderRightColor: 'transparent', background: 'transparent' }}
-              items={menuItems}
+              items={items}
             />
           </ConfigProvider>
         </div>
 
-        {/* pinned logout at bottom */}
-        <div className="py-3 ps-3 absolute bottom-0 w-full bg-[#1C1C1E] ">
-          <Link href="/login" className="flex items-center gap-x-2 text-red-500 hover:text-red-600">
+        <div className="py-3 ps-3 absolute bottom-0 w-full bg-[#1C1C1E]">
+          <Link
+            href="/login"
+            onClick={onCloseDrawer}
+            className="flex items-center gap-x-2 text-red-500 hover:text-red-600"
+          >
             <IoIosLogOut size={18} />
             <span className="font-normal">Logout</span>
           </Link>
         </div>
+
       </div>
     </div>
   );

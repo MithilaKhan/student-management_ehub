@@ -1,20 +1,11 @@
-
 import React from 'react'
 import { FaRegBell } from 'react-icons/fa6';
 import { Badge } from 'antd';
 import Link from 'next/link';
-import { HiMenu } from 'react-icons/hi';
 
 const Header = () => {
 
     return (
-        <div className=' w-full flex items-center md:justify-end justify-between md:ps-7 ps-0'>
-            <button
-                className="lg:hidden block text-[#ABABAB] text-2xl mr-auto"
-                // onClick={toggle}
-            >
-                <HiMenu size={28} />
-            </button>
             <div className='flex items-center gap-x-7 justify-end'>
                 <Link href="/notification" className='h-fit pt-2'>
                     <Badge count={1} >
@@ -41,7 +32,6 @@ const Header = () => {
 
                 </Link>
             </div>
-        </div>
     )
 }
 
