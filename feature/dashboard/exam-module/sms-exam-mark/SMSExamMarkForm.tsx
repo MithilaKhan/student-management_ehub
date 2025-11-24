@@ -6,10 +6,10 @@ import { studentOptions } from "@/constants/dashboard/class-routine-data";
 
 const SMSExamMarkForm = () => {
     return (
-        <div className="flex justify-between h-full ">
+        <div className="flex md:flex-row flex-col-reverse justify-between h-full ">
             {/* Left side form */} 
-            <div className=" w-[75%]"> 
-            <Form layout="vertical" className="w-[70%] bg-transparent">
+            <div className=" md:w-[75%] w-full"> 
+            <Form layout="vertical" className="md:w-[70%] w-full bg-transparent">
                 {/* Grade */}
                 <Form.Item
                     label={<label className="text-[#9CA3AF]">Grade</label>}
@@ -95,7 +95,7 @@ const SMSExamMarkForm = () => {
                 {/* Checkboxes */}
                 <div className="mb-6">
                     <p className="text-[#9CA3AF] mb-2">Send SMS to the contacts</p>
-                    <div className="flex gap-6">
+                    <div className="flex md:flex-row flex-wrap gap-6">
                         <Checkbox className="text-white">Father’s Contact</Checkbox>
                         <Checkbox className="text-white">Mother’s Contact</Checkbox>
                         <Checkbox className="text-white">Guardian’s Contact</Checkbox>
@@ -112,7 +112,7 @@ const SMSExamMarkForm = () => {
             </div>
 
             {/* Right side guide */}
-            <div className="w-[25%] ">
+            <div className="md:w-[25%] w-full md:pb-0 pb-6 ">
                 <h2 className="text-[#F1F1F1] text-xl font-medium mb-3 underline underline-offset-4">How to input Marks</h2>
                 <ul className="space-y-3 text-sm">
                     <li className="text-[#F1F1F1]">

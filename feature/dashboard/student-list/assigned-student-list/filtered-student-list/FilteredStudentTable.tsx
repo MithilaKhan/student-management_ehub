@@ -11,7 +11,6 @@ const columns = [
       title: 'SL',
       dataIndex: 'id',
       key: 'id',
-      responsive: ['sm'] as any,
       render: (val: number) => val ?? '-',
     },
     {
@@ -23,50 +22,42 @@ const columns = [
       title: 'Email Address',
       dataIndex: 'email',
       key: 'email',
-      responsive: ['md'] as any,
     },
     {
       title: 'Mobile No.',
       dataIndex: 'mobile',
       key: 'mobile',
-      responsive: ['md'] as any,
     },
     {
       title: 'Passport No.',
       dataIndex: 'passportNo',
       key: 'passportNo',
-      responsive: ['lg'] as any,
     },
     {
       title: 'Batch',
       dataIndex: 'batch',
       key: 'batch',
-      responsive: ['md'] as any,
     },
     {
       title: 'Subject',
       dataIndex: 'subject',
       key: 'subject',
-      responsive: ['lg'] as any,
     },
     {
       title: 'Section',
       dataIndex: 'section',
       key: 'section',
-      responsive: ['lg'] as any,
     },
     {
       title: 'Special Fee',
       dataIndex: 'specialFee',
       key: 'specialFee',
-      responsive: ['lg'] as any,
       render: (val: string) => (val && val.trim() ? val : '-----'),
     },
     {
       title: 'Delete date',
       dataIndex: 'deleteDate',
       key: 'deleteDate',
-      responsive: ['lg'] as any,
       render: (val: string) => (val && val.trim() ? val : '-----'),
     },
     {

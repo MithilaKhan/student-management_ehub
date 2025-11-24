@@ -9,9 +9,9 @@ const AssignToCourse = () => {
 
     return (
         <div className=' w-full h-full'>
-            <div className='flex items-center justify-between'>
+            <div className='flex md:flex-row flex-col md:items-center justify-between md:space-y-0 space-y-4 mb-6'>
                 <HeaderTitle title="Enrol Student to Course" />
-                <button type="submit" className=" bg-[#198754] h-[40px]  px-6 rounded-md text-white" onClick={() => setIsOpen(true)}>
+                <button type="submit" className=" bg-[#198754] h-[40px]  px-6 w-full md:max-w-[200px] rounded-md text-white" onClick={() => setIsOpen(true)}>
                     View Class Routine
                 </button>
             </div>

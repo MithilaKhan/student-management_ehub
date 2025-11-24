@@ -10,7 +10,6 @@ const SectionListTable = ({ setIsOpen}:modalType) => {
       title: 'SL',
       dataIndex: 'id',
       key: 'id',
-      responsive: ['sm'] as any,
       render: (val: number) => val ?? '-',
     },
     {
@@ -22,40 +21,34 @@ const SectionListTable = ({ setIsOpen}:modalType) => {
       title: 'Subject',
       dataIndex: 'subjectName',
       key: 'subjectName',
-      responsive: ['md'] as any,
     },
     {
       title: 'Batch Name',
       dataIndex: 'batchName',
       key: 'batchName',
-      responsive: ['lg'] as any,
     },
     {
       title: 'Seats Empty',
       dataIndex: 'seatsEmpty',
       key: 'seatsEmpty',
-      responsive: ['lg'] as any,
       render: (val: number) => val ?? '-',
     },
     {
       title: 'Seats Filled',
       dataIndex: 'seatsFilled',
       key: 'seatsFilled',
-      responsive: ['lg'] as any,
       render: (val: number) => val ?? '-',
     },
     {
       title: 'Total Seats',
       dataIndex: 'totalSeats',
       key: 'totalSeats',
-      responsive: ['lg'] as any,
       render: (val: number) => val ?? '-',
     },
     {
       title: 'Is Active',
       dataIndex: 'status',
       key: 'status',
-      responsive: ['sm'] as any,
       render: (val: string) => (
         <span className={val?.toLowerCase() === 'active' ? 'text-green-400' : 'text-red-400'}>
           {val ?? '-'}

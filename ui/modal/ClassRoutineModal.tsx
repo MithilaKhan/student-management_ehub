@@ -77,12 +77,13 @@ const ClassRoutineModal = ({ isOpen, setIsOpen }: modalType) => {
             width={720}
             className="custom-black-modal"
         >
-            <h3 className="mb-5 text-white text-lg font-medium">IAL Accounting A2 - IAL - A2 Accounting May 2026 B#1</h3>
+            <h3 className="mb-5 text-white text-lg font-medium pt-3">IAL Accounting A2 - IAL - A2 Accounting May 2026 B#1</h3>
             <Table
                 columns={columns}
                 dataSource={classRoutineData}
                 pagination={false}
                 bordered
+                scroll={{ x: "max-content" }}
                 className="custom-table"
                 rowKey="id"
             />

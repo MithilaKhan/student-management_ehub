@@ -18,7 +18,7 @@ const ReportRangeForm = () => {
         <Form 
             form={form}
             layout="vertical" 
-            className="w-[50%]"
+            className="md:w-[50%] w-[100%]"
             onFinish={onFinish}
         >
             <p className="text-[#1E88E5] text-lg mb-4">Report Date Range</p>

@@ -197,7 +197,7 @@ const FilterTakeAttendance = () => {
   return (
     <div>
       {/* header */}
-      <div className="flex items-start justify-between ">
+      <div className="flex md:flex-row flex-col items-start justify-between md:space-y-0 space-y-4 ">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded bg-[#1e293b]">
             <FiEdit className="text-white" />
@@ -208,10 +208,10 @@ const FilterTakeAttendance = () => {
         </div>
 
         <div className="">
-          <div className="text-[#1E88E5] font-semibold text-2xl">
+          <div className="text-[#1E88E5] font-semibold md:text-2xl text-xl">
             Date: {formatNiceDate(displayDate)}
           </div>
-          <div className="text-[16px] text-gray-300 mt-2">
+          <div className="text-[16px] text-gray-300 md:mt-2 mt-0">
             <div>Subject: {subject}</div>
             <div>Batch: {batch}</div>
             <div>Section: {section}</div>
@@ -221,7 +221,7 @@ const FilterTakeAttendance = () => {
 
       {/* badge */}
       <div className="mb-5">
-        <span className="inline-block bg-[#198754] text-white text-sm px-4 py-1 rounded-full">
+        <span className="inline-block bg-[#198754] text-white text-sm md:px-4 px-2 py-1 rounded-full">
           Total Present: {presentCount}
         </span>
       </div>

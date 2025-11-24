@@ -10,7 +10,7 @@ const FilterForm = () => {
         form.resetFields();
     };
     return (
-        <Form layout="vertical" className=' w-[55%]'>
+        <Form layout="vertical" className=' md:w-[55%] w-full'>
             <Form.Item
                 label={<label className="block   text-[#9CA3AF]">Student Name</label>}
                 name="studentName"

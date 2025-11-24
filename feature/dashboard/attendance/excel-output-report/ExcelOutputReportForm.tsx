@@ -9,7 +9,7 @@ const ExcelOutputReportForm = () => {
   const [form] = Form.useForm();
   const handleReset = () => form.resetFields();
   return (
-    <Form form={form}  layout="vertical" className="w-[55%]">
+    <Form form={form}  layout="vertical" className="md:w-[55%] w-full">
       <Form.Item
         label={<label className="block text-sm text-[#9CA3AF]">Grade</label>}
         name="grade"

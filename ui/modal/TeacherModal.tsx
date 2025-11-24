@@ -10,7 +10,7 @@ const TeacherModal = ({ isOpen, setIsOpen }: modalType) => {
             width={620}
             className="custom-black-modal"
         >
-            <h3 className="mb-5 text-white text-lg font-medium">Add Admin</h3>
+            <h3 className="mb-5 text-white text-lg font-medium">Add Teacher</h3>
             <Form layout="vertical">
                 <Form.Item
                     label={<label className="block text-sm  text-[#9CA3AF]">Full Name</label>}

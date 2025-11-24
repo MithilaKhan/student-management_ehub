@@ -29,7 +29,7 @@ const StudentFilterForm = () => {
         router.push(`/report-card/filtered-student-list?${params.toString()}`);
     }
     return (
-        <Form layout="vertical" className=' w-[50%]' onFinish={onFinish}>
+        <Form layout="vertical" className=' md:w-[50%] w-full' onFinish={onFinish}>
             <Form.Item
                 label={<label className="block text-sm text-[#9CA3AF]">Grade</label>}
                 name="grade"

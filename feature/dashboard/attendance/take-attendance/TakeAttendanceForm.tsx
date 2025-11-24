@@ -33,7 +33,7 @@ const TakeAttendanceForm = () => {
     };
 
     return (
-        <Form form={form} onFinish={onFinish} layout="vertical" className=' w-[55%]'>
+        <Form form={form} onFinish={onFinish} layout="vertical" className=' md:w-[55%] w-full'>
             <div className="grid grid-cols-1 ">
                 <Form.Item
                     label={<label className="block text-sm text-[#9CA3AF]">Grade</label>}

@@ -7,11 +7,11 @@ const MonthlySubscriptionFee = () => {
     return (
         <div >
             <HeaderTitle title="Monthly Subscription Fees" />
-            <div className=' w-full h-full pt-6'>
+            <div className=' w-full h-full pt-6 md:mb-0 mb-6'>
                 <SubscriptionForm />
             </div>
             <div className="w-full h-full pt-3 pb-6 space-y-2">
-                <p className="text-xl text-[#1A5FA4]">
+                <p className="md:text-xl text-lg text-[#1A5FA4]">
                     <span className="">Subscription fee for the month:</span>{' '}
                     <span className="font-medium ">January-2025</span>
                 </p>

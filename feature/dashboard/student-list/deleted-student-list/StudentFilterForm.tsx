@@ -11,7 +11,7 @@ const StudentFilterForm = () => {
         router.push('/student-list/deleted-student-list/filtered-student-list');
     }
     return (
-        <Form layout="vertical" className=' w-[50%]' onFinish={onFinish}>
+        <Form layout="vertical" className=' md:w-[50%] w-[100%]' onFinish={onFinish}>
             <Form.Item
                 label={<label className="block   text-[#9CA3AF]">Grade Name</label>}
                 name="gradeName"

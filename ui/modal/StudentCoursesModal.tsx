@@ -13,7 +13,7 @@ const StudentCoursesModal = ({ isOpen, setIsOpen }: modalType) => {
     >
       <h3 className="mb-5 text-white text-lg font-medium">Add Student Courses</h3>
                 <Form layout="vertical" onFinish={() => setIsOpen(false)}>
-                <div className="grid grid-cols-2 gap-x-4">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-x-4">
                     <Form.Item
                         label={<label className="block text-sm text-[#9CA3AF]">Full Name</label>}
                         name="fullName"

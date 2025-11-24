@@ -53,7 +53,7 @@ const SmsWeeklyDailyForm = () => {
   };
 
   return (
-    <Form form={form} onFinish={onFinish} layout="vertical" className="w-[55%]">
+    <Form form={form} onFinish={onFinish} layout="vertical" className="md:w-[55%] w-full">
       <Form.Item
         label={<label className="block text-sm text-[#9CA3AF]">Report Type</label>}
         name="reportType"

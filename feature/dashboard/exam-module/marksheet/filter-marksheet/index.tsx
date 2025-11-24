@@ -7,7 +7,7 @@ import MarksheetTable from './MarksheetTable';
 const FilterMarksheet = () => {
     return (
         <div>
-            <div className="flex justify-between items-start pb-10 ">
+            <div className="flex md:flex-row flex-col-reverse justify-between items-start  pb-10 ">
                 {/* Left side: Title and info */}
                 <div>
                     <div className="flex items-center gap-2 text-lg font-medium pb-3">
@@ -26,7 +26,7 @@ const FilterMarksheet = () => {
                     </div>
                 </div>
 
-                   <Input placeholder="Search" className="" style={{ width: 280, height: 40 }} prefix={<FiSearch size={20} />} />
+                   <Input placeholder="Search" className="w-[280px]  md:mb-0 mb-4 " style={{width: 280,  height: 40 }} prefix={<FiSearch size={20} />} />
             </div> 
             <MarksheetTable/>
         </div>

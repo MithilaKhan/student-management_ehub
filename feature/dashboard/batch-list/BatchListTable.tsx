@@ -3,14 +3,13 @@ import React from 'react';
 import { modalType } from '@/type';
 import TableMain from '@/shared/TableMain';
 import batchListData from '@/constants/dashboard/batch-list-data';
-const BatchListTable = ({ setIsOpen}:modalType) => { 
+const BatchListTable = ({ setIsOpen }: modalType) => {
 
-     const columns = [
+  const columns = [
     {
       title: 'SL',
       dataIndex: 'id',
       key: 'id',
-      responsive: ['sm'] as any,
       render: (val: number) => val ?? '-',
     },
     {
@@ -23,40 +22,34 @@ const BatchListTable = ({ setIsOpen}:modalType) => {
       dataIndex: 'batchDetails',
       key: 'batchDetails',
       render: (val: string) => (val && val.trim() ? val : '--------------'),
-      responsive: ['md'] as any,
     },
     {
       title: 'Batch Msg',
       dataIndex: 'batchMsg',
       key: 'batchMsg',
-      responsive: ['md'] as any,
       render: (val: string) => (val && val.trim() ? val : '-'),
     },
     {
       title: 'Subject Name',
       dataIndex: 'subjectName',
       key: 'subjectName',
-      responsive: ['lg'] as any,
     },
     {
       title: 'Reg. Start Date',
       dataIndex: 'regStartDate',
       key: 'regStartDate',
-      responsive: ['lg'] as any,
       render: (val: string) => val ?? '-',
     },
     {
       title: 'Reg. End Date',
       dataIndex: 'regEndDate',
       key: 'regEndDate',
-      responsive: ['lg'] as any,
       render: (val: string) => val ?? '-',
     },
     {
       title: 'In Active',
       dataIndex: 'status',
       key: 'status',
-      responsive: ['sm'] as any,
       render: (val: string) => (
         <span className={val?.toLowerCase() === 'active' ? 'text-green-400' : 'text-red-400'}>
           {val ?? '-'}
@@ -74,15 +67,15 @@ const BatchListTable = ({ setIsOpen}:modalType) => {
     },
   ];
 
-    return (
-        <div>      
-                <TableMain
-                columns={columns}
-                dataSource={batchListData}
-                className="w-full custom-table"
-            />
-        </div>
-    );
+  return (
+    <div>
+      <TableMain
+        columns={columns}
+        dataSource={batchListData}
+        className="w-full custom-table"
+      />
+    </div>
+  );
 };
 
 export default BatchListTable;

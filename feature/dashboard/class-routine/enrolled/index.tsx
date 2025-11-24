@@ -14,7 +14,7 @@ const StudentEnrolled = () => {
             <div className=" h-[60vh] ">
                 <div className='flex-center w-full h-full '>
                    
-                        <Form layout="vertical" className=' w-[50%]'>
+                        <Form layout="vertical" className=' md:w-[50%] w-[100%]'>
                             <Form.Item
                                 label={<label className="block   text-[#9CA3AF]">Student Name</label>}
                                 name="studentName"

@@ -15,7 +15,7 @@ const SubscriptionForm = () => {
         <Form
             form={form}
             layout="vertical"
-            className="w-[80%]"
+            className="md:w-[80%] w-full"
             onFinish={onFinish}
         >
             <div className="grid grid-cols-2 gap-x-4">

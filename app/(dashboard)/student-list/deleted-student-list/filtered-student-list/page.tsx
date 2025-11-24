@@ -1,4 +1,4 @@
-import FilteredStudentList from "@/feature/dashboard/student-list/assigned-student-list/filtered-student-list/FilteredStudentList";
+import FilteredStudentList from "@/feature/dashboard/student-list/deleted-student-list/filtered-student-list/FilteredStudentList";
 
 const filteredStudentListPage = () => {
     return (

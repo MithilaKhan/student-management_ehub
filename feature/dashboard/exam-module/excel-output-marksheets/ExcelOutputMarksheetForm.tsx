@@ -6,7 +6,7 @@ import { studentOptions } from "@/constants/dashboard/class-routine-data";
 
 const ExcelOutputMarksheetForm = () => {
     return (  
-            <Form layout="vertical" className="w-[70%] bg-transparent">
+            <Form layout="vertical" className="lg:w-[70%] w-full bg-transparent">
                 {/* Grade */}
                 <Form.Item
                     label={<label className="text-[#9CA3AF]">Grade</label>}

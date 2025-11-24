@@ -4,7 +4,7 @@ const ChangePassword = () => {
     const [form] = Form.useForm();
 
     return (
-        <div className="px-6 lg:px-12 mt-8">
+        <div className="px-0 lg:px-12 mt-8">
             <Form
                 form={form}
                 layout="vertical"

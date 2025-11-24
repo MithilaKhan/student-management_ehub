@@ -59,11 +59,11 @@ const FilterMonthAttendance = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex md:flex-row flex-col md:items-center justify-between md:space-y-0 space-y-4 mb-4">
         <div className="flex items-center gap-2">
           <span className="text-white text-lg">Student History</span>
         </div>
-        <div className="text-right text-sm text-gray-400">
+        <div className="md:text-right text-left text-sm text-gray-400">
           <div>Subject: {subject}</div>
           <div>Batch: {batch}</div>
           <div>Section: {section}</div>

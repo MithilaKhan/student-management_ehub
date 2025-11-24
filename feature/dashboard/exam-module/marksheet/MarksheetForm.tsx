@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const MarksheetForm = () => { 
     const router = useRouter()
     return (  
-            <Form layout="vertical" className="w-[50%]" >
+            <Form layout="vertical" className="md:w-[50%] w-full" >
                 {/* Grade */}
                 <Form.Item
                     label={<label className="text-[#9CA3AF]">Grade</label>}

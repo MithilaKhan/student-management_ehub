@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             style={{ height: "100vh" }}
         >
             <div
-                className={`${poppins.className} shadow-xl bg-[#4d4d51] bg-clip-padding backdrop-filter backdrop-blur-lg border border-gray-100/50 p-7 rounded-md w-[570px] relative z-10 text-[#f5f4f4]`}
+                className={`${poppins.className} shadow-xl bg-[#3b3b3d] bg-clip-padding backdrop-filter backdrop-blur-lg border border-gray-100/40 p-7 rounded-md w-[570px] relative z-10 text-[#f5f4f4]`}
             >
                 <ConfigProvider
                     theme={{

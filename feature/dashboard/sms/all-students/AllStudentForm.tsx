@@ -6,7 +6,7 @@ import { MdArrowDropDown } from 'react-icons/md';
 
 const AllStudentForm = () => {
     return (
-        <Form layout="vertical" className=' w-[50%]' >
+        <Form layout="vertical" className='md:w-[50%] w-[100%]' >
             <Form.Item
                 label={<label className="block   text-[#9CA3AF]">Grade Name</label>}
                 name="gradeName"
