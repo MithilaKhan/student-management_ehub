@@ -5,10 +5,9 @@ import { Input } from 'antd';
 import { FiSearch } from 'react-icons/fi';
 import StudentListTable from './StudentListTable';
 import StudentInfoModal from '@/ui/modal/StudentInfoModal';
-import { useMediaQuery } from 'react-responsive';
 
 const AllStudentList = () => {
-    const isMobile = useMediaQuery({ maxWidth: 767 }); 
+   
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -18,11 +17,10 @@ const AllStudentList = () => {
 
                 <div className="flex md:flex-row flex-col md:items-center gap-x-3 md:space-y-0 space-y-4">
 
-                    {/* Here is the responsive width */}
                     <Input
-                        placeholder="Search"
+                        placeholder="Search" 
+                        className=" md:w-[280px] w-full"
                         style={{
-                            width: isMobile ? "100%" : 280,
                             height: 40,
                         }}
                         prefix={<FiSearch size={20} />}

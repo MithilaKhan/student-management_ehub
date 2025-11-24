@@ -29,6 +29,7 @@ const TableMain = <T,>({ className, pagination, ...rest }: Props<T>) => {
       <Table
         {...(rest as TableProps<T>)}
         pagination={defaultPagination}
+        scroll={{ x: "max-content" }}
         className={[className, 'custom-table'].filter(Boolean).join(' ')}
       />
     </ConfigProvider>
